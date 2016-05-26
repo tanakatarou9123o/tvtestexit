@@ -37,7 +37,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDC_TVTESUEXIT, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
 
-
 	while (true)
 	{
 
