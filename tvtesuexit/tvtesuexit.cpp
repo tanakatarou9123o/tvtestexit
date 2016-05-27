@@ -66,19 +66,19 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 			time(&sec);//時間取得
 			localtime_s(&timem,&sec);//時間の書式変換
 
-			if ((timem.tm_hour==6)&& ((timem.tm_min >= 0)&& (timem.tm_min < 10)))//6:00~6:10 なら
+			if ((timem.tm_hour==6)&& ((timem.tm_min >= 0)&& (timem.tm_min < 30)))//6:00~6:30 なら
 			{
 
 				auto phand = OpenProcess(PROCESS_ALL_ACCESS, TRUE, pe.th32ProcessID); //アクセス権限, ,プロセスID アクセス権限を設定してプロセスハンドル取得
 				TerminateProcess(phand, 0);
-				break;
+				
 			}
-			Sleep((120000) * 4);
+			break;
 
 		}
 
 		
-
+		CloseHandle(hSnap);
 		Sleep((120000)*4);//8pun
 		
 
